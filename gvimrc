@@ -1,19 +1,19 @@
 "-------------------------------------------------------------------------------
-" ウィンドウ Window
+" Configuration: ウィンドウ Window
 "-------------------------------------------------------------------------------
 set columns=100     " 横幅
-set lines=52        " 行数
+set lines=70        " 行数
 set showtabline=2   " 常にタブを表示
+set linespace=4     " 行間
 
 "-------------------------------------------------------------------------------
-" カラー設定 Color
+" Configuration: カラー設定 Color
 "-------------------------------------------------------------------------------
 
-colorscheme desert
+"colorscheme desert
 
 " IME状態に応じたカーソル色を設定
 if has('multi_byte_ime')
   highlight Cursor guifg=NONE guibg=Green gui=bold
   highlight CursorIM guifg=NONE guibg=Purple
 endif
-
