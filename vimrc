@@ -253,15 +253,15 @@ NeoBundle 'basyura/unite-rails'         "Rails
 
 nnoremap <silent> -   :Switch<CR>
 
-nnoremap [split] <Nop>
-nmap <Leader>j [split]
-nnoremap <silent> [split]s :<C-u>SplitJoinSplit<CR>
-nnoremap <silent> [split]j :<C-u>SplitJoinJoin<CR>
+"nnoremap [split] <Nop>
+"nmap <Leader>j [split]
+"nnoremap <silent> [split]s :<C-u>SplitJoinSplit<CR>
+"nnoremap <silent> [split]j :<C-u>SplitJoinJoin<CR>
 
-nnoremap <silent> rm  :Rmodel<CR>
-nnoremap <silent> rc  :Rcontroller<CR>
-nnoremap <silent> rv  :Rview<CR>
-nnoremap <silent> rs  :Rspec<CR>
+"nnoremap <silent> rm  :Rmodel<CR>
+"nnoremap <silent> rc  :Rcontroller<CR>
+"nnoremap <silent> rv  :Rview<CR>
+"nnoremap <silent> rs  :Rspec<CR>
 
 
 "-------------------------------------------------------------------------------
