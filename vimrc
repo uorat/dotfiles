@@ -32,9 +32,9 @@ NeoBundle 'Shougo/vimproc', {
 
 
 "-------------------------------------------------------------------------------
-" Plugin: NeoComplcache
+" Plugin: NeoComplcache - 入力補完
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/neocomplcache'        "入力補完
+NeoBundle 'Shougo/neocomplcache'
 
 "Note => This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -128,10 +128,10 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 "-------------------------------------------------------------------------------
-" Plugin: NeoSnippet
+" Plugin: NeoSnippet - スニペット補完
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/neosnippet'           "スニペット補完
-NeoBundle 'Shougo/neosnippet-snippets'  "スニペット補完
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -159,9 +159,9 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 
 "-------------------------------------------------------------------------------
-" Plugin: VimShell
+" Plugin: VimShell - Vim上でShellを実行する ( :VimShell )
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/vimshell'             "Vim上でShellを実行する ( :VimShell )
+NeoBundle 'Shougo/vimshell'
 
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
@@ -169,10 +169,10 @@ nnoremap <silent> vp :VimShellPop<CR>
 
 
 "-------------------------------------------------------------------------------
-" Configration: Unite
+" Plugin: Unite - 高機能ファイラー
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/unite.vim'            "高機能ファイラー
-NeoBundle 'Shougo/neomru.vim'           "Unite::file_mruで使用
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim' "Unite::file_mruで使用
 
 let mapleader = ","
 
@@ -217,14 +217,27 @@ autocmd FileType unite call s:unite_my_settings()
 
 
 "-------------------------------------------------------------------------------
-" Plugin: NERDTree
-" Plugin: Syntastic
-" Plugin: AirLine
+" Plugin: NERDTree      - ファイルツリー ( :NERDTree )
+" Plugin: Syntastic     - SyntaxCheck汎用プラグイン
+" Plugin: AirLine       - Extend statusline
+" Plugin: AnsiEsc       - ASCI文字を反映
+" Plugin: auto-ctags    - ctagsを保存時に実行する
+"
+" Usage - auto-ctags
+"   1. install ctags
+"        mac    `brew install ctags`
+"        debian `apt-get install exuberant-ctags`
+"   2. run ctags
+"        :Ctags
+"
 " http://www.daisaru11.jp/blog/2011/09/vimsyntastic%E3%81%A7%E6%96%87%E6%B3%95%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E8%87%AA%E5%8B%95%E3%81%A7%E8%A1%8C%E3%81%86/
+" http://soramugi.hateblo.jp/entry/2013/12/01/150433
 "-------------------------------------------------------------------------------
-NeoBundle 'scrooloose/nerdtree'         "ファイルツリー ( :NERDTree )
-NeoBundle 'scrooloose/syntastic'        "SyntaxCheck汎用プラグイン
-NeoBundle 'bling/vim-airline'           "Extend statusline
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'soramugi/auto-ctags.vim'
 
 let g:NERDTreeShowBookmarks=1		"起動時にBookmarkを表示
 nnoremap <silent> tr :NERDTree<CR>
@@ -239,24 +252,43 @@ let g:syntastic_auto_loc_list = 2
 
 let g:airline#extensions#tabline#enabled = 1
 set t_Co=256
-set laststatus=2	" 常にステータスラインを表示
+set laststatus=2        " 常にステータスラインを表示
+
+let g:auto_ctags = 1    " ファイル保存時に自動的にCtagsを実行
+" let g:auto_ctags_directory_list = ['.git', '.svn'] "バージョン管理外のディレクトリに保存
+" set tags+=.svn/tags
+nnoremap <C-]> g<C-]>   " 候補が複数ある場合は候補を表示する
 
 
 "-------------------------------------------------------------------------------
-" Plugin: vim-rails & Switch
+" Configration: develop
+"
+" Plugin: Switch        - switch keyword (ex. true <-> false)
+" Plugin: SplitJoin     - 1行コード <-> 複数行の切替
+" Plugin: tcomment_vim  - コメントON/OFFを手軽に実行 (<Ctl> --)
+" Plugin: surround.vim  - シングルクォートとダブルクォートを切替 (cs'")
+" Plugin: vim-endwise   - endを自動挿入
+" Plugin: vim-ruby      - Rubyのオムニ変換を行うためのプラグイン
+" Plugin: vim-rails     - RailsのModel-View-Controllerの移動補佐 (:Rmodel ...etc)
+" Plugin: unite-rails   - Rails
 "-------------------------------------------------------------------------------
-NeoBundle 'AndrewRadev/switch.vim'      " switch keyword (ex. true <-> false)
-NeoBundle 'AndrewRadev/splitjoin.vim'   " 1行コード <-> 複数行の切替
-NeoBundle 'vim-ruby/vim-ruby'           "Rubyのオムニ変換を行うためのプラグイン
-NeoBundle 'tpope/vim-rails'             "RailsのModel-View-Controllerの移動補佐 (:Rmodel ...etc)
-NeoBundle 'basyura/unite-rails'         "Rails
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'AndrewRadev/splitjoin.vim'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'basyura/unite-rails'
 
 nnoremap <silent> -   :Switch<CR>
 
-"nnoremap [split] <Nop>
-"nmap <Leader>j [split]
-"nnoremap <silent> [split]s :<C-u>SplitJoinSplit<CR>
-"nnoremap <silent> [split]j :<C-u>SplitJoinJoin<CR>
+nmap gj :SplitjoinJoin<cr>
+nmap gk :SplitjoinSplit<cr>
+" let g:splitjoin_split_mapping = ''
+" let g:splitjoin_join_mapping = ''
+" nmap <Leader>j :SplitjoinJoin<cr>
+" nmap <Leader>s :SplitjoinSplit<cr>
 
 "nnoremap <silent> rm  :Rmodel<CR>
 "nnoremap <silent> rc  :Rcontroller<CR>
@@ -340,9 +372,19 @@ set listchars=tab:>\ \,trail:_,extends:>,precedes:<
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " 全角スペースの表示
-"highlight Zenkakuspace cterm=underline ctermfg=lightblue guibg=darkgray
-highlight Zenkakuspace cterm=underline ctermfg=white ctermbg=black
-match Zenkakuspace /　/
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+    " highlight Zenkakuspace cterm=underline ctermfg=white ctermbg=black
+endfunction
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
 
 
 " カーソル行を表示
