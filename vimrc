@@ -222,6 +222,7 @@ autocmd FileType unite call s:unite_my_settings()
 " Plugin: AirLine       - Extend statusline
 " Plugin: AnsiEsc       - ASCI文字を反映
 " Plugin: auto-ctags    - ctagsを保存時に実行する
+" Plugin: taglist.vim   - class, method tree list
 "
 " Usage - auto-ctags
 "   1. install ctags
@@ -238,6 +239,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'vim-scripts/taglist.vim'
 
 let g:NERDTreeShowBookmarks=1		"起動時にBookmarkを表示
 nnoremap <silent> tr :NERDTree<CR>
@@ -254,10 +256,15 @@ let g:airline#extensions#tabline#enabled = 1
 set t_Co=256
 set laststatus=2        " 常にステータスラインを表示
 
-let g:auto_ctags = 1    " ファイル保存時に自動的にCtagsを実行
+" let g:auto_ctags = 1    " ファイル保存時に自動的にCtagsを実行
 " let g:auto_ctags_directory_list = ['.git', '.svn'] "バージョン管理外のディレクトリに保存
 " set tags+=.svn/tags
 nnoremap <C-]> g<C-]>   " 候補が複数ある場合は候補を表示する
+
+let Tlist_Show_One_File = 1             "現在表示中のファイルのみのタグしか表示しない
+let Tlist_Use_Right_Window = 1          "右側にtag listのウインドうを表示する
+let Tlist_Exit_OnlyWindow = 1           "taglistのウインドウだけならVimを閉じる
+nnoremap <silent> tl :TlistToggle<CR>   "tlでtaglistウインドウを開閉
 
 
 "-------------------------------------------------------------------------------
