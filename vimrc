@@ -223,6 +223,9 @@ autocmd FileType unite call s:unite_my_settings()
 " Plugin: AnsiEsc       - ASCI文字を反映
 " Plugin: auto-ctags    - ctagsを保存時に実行する
 " Plugin: taglist.vim   - class, method tree list
+" Plugin: previm        - previewer Markdown, textfile
+" Plugin: open-browser  - Open browser
+" Plugin: colorschema
 "
 " Usage - auto-ctags
 "   1. install ctags
@@ -240,6 +243,11 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'zeekay/vice-colorful'
+
+colorscheme molokai-dark
 
 let g:NERDTreeShowBookmarks=1		"起動時にBookmarkを表示
 nnoremap <silent> tr :NERDTree<CR>
@@ -469,6 +477,7 @@ endif
 augroup templates
   autocmd!
   autocmd BufNewFile *.rb 0r ~/.vim/templates/rb.tpl
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
 

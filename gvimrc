@@ -4,7 +4,8 @@
 set columns=100     " 横幅
 set lines=70        " 行数
 set showtabline=2   " 常にタブを表示
-set linespace=4     " 行間
+set linespace=2     " 行間
+set guifont=Monospace\ 12
 
 "-------------------------------------------------------------------------------
 " Configuration: カラー設定 Color
