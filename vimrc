@@ -383,8 +383,18 @@ syntax enable       " シンタックスカラーをON
 " 不可視文字表示
 set list
 set listchars=tab:>\ \,trail:_,extends:>,precedes:<
+
+
+augroup templates
+  autocmd!
+  autocmd BufNewFile *.rb 0r ~/.vim/templates/rb.tpl
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
 " 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+if &ft != 'markdown'
+  autocmd BufWritePre * :%s/\s\+$//ge
+endif
 
 " 全角スペースの表示
 " http://inari.hatenablog.com/entry/2014/05/05/231307
@@ -469,16 +479,6 @@ inoremap <> <><Left>
 if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
-
-
-"-------------------------------------------------------------------------------
-" Configration: ファイル別
-"-------------------------------------------------------------------------------
-augroup templates
-  autocmd!
-  autocmd BufNewFile *.rb 0r ~/.vim/templates/rb.tpl
-  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
 
 
 "-------------------------------------------------------------------------------
