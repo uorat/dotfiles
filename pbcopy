@@ -1,0 +1,16 @@
+#!/bin/sh
+
+subcommand=$1
+echo $subcommand
+
+case $subcommand in
+  --input)
+    xsel --clipboard --input
+    ;;
+  --output)
+    xsel --clipboard --output
+    ;;
+  *)
+    xsel --clipboard --input
+    ;;
+esac

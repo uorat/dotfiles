@@ -1,3 +1,6 @@
+set t_ut=
+set t_Co=256
+
 "-------------------------------------------------------------------------------
 " Plugin: NeoBundle
 " memo: Excellent Plugin Manager
