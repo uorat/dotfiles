@@ -8,7 +8,14 @@ set t_Co=256
 "   * NeoBundleのインストール - Qiita
 "     http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310
 " usage:
+"   # Linux or Mac OS X
 "   $ mkdir -p ~/.vim/bundle
+"   $ git clone http://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+"
+"   # Windows
+"   $ mklink .vimrc \app\dotfiles\vimrc
+"   $ mklink .gvimrc \app\dotfiles\gvimrc
+"   $ mklink /d .vim \app\dotfiles\vim
 "   $ git clone http://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "
 "-------------------------------------------------------------------------------
@@ -433,7 +440,7 @@ set smartindent         " 新しい行のインデントを現在行と同じ量
 " set paste             " ペースト時にautoindentを無効にする
 set tabstop=4           " Tabの表示幅
 set shiftwidth=2        " インデント幅設定
-
+set expandtab           " TABをSpaceに
 
 "-----------------------------------------------------------
 " Configration: 検索設定 Search
@@ -560,9 +567,7 @@ endif
 set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
-set expandtab
 "inoremap <silent> <unique> <ESC> <ESC>:set imsearch=0 iminsert=0<CR>
-
 
 "-----------------------------------------------------------
 " Configration: ステータスライン StatusLine
