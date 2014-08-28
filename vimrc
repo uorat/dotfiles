@@ -293,6 +293,9 @@ nnoremap <silent> tl :TlistToggle<CR>   "tlでtaglistウインドウを開閉
 " Plugin: tcomment_vim  - コメントON/OFFを手軽に実行 (<Ctl> --)
 " Plugin: surround.vim  - シングルクォートとダブルクォートを切替 (cs'")
 " Plugin: vim-endwise   - endを自動挿入
+" Plugin: Align         - 高機能整形 桁揃え
+" Plugin: vim-alignta   - マルチバイト対応の整形
+" Plugin: SQLUtilities  - SQL整形 生成ユーティリティ
 " Plugin: vim-ruby      - Rubyのオムニ変換を行うためのプラグイン
 " Plugin: vim-rails     - RailsのModel-View-Controllerの移動補佐 (:Rmodel ...etc)
 " Plugin: unite-rails   - Rails
@@ -302,6 +305,9 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'Align'
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'SQLUtilities'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'basyura/unite-rails'
