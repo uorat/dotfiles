@@ -26,8 +26,13 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" Required
-call neobundle#rc(expand('~/.vim/bundle/'))
+" Required old ver.
+" call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Required new ver.
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 NeoBundleFetch 'Shougo/neobundle.vim'   " Required: Let NeoBundle manage NeoBundle
 

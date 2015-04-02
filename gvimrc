@@ -12,8 +12,8 @@ if has('win32')     "win32 & win64
   " set guifont=Ricty:h12
   set guifont=Migu_1M:h12
 else
-  "set guifont=Monospace\ 14
-  set guifont=Menlo\ Regular:h13
+  set guifont=Monospace\ 14
+  " set guifont=Menlo\ Regular:h13
 endif
 
 "-------------------------------------------------------------------------------
