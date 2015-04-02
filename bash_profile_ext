@@ -7,18 +7,21 @@ if [ -f ~/.bash_profile_ext ]; then
 fi
 
 export LANG=ja_JP.UTF-8
-export TERM="xterm-256color"
-export COLORTERM="gnome-terminal"
+export TERM='xterm-256color'
+export COLORTERM='gnome-terminal'
 export EDITOR=vim
-export JAVA_HOME="/usr/lib/jvm/java-7-oracle/"
-export PATH="$PATH:/opt/pdi/apache-maven-3.2.2/bin"
 
 alias swpsearch='find . -name ".*.sw*"'
-alias tmux="tmux -2"
-
-# for ubuntu
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+alias findswp="find . -name '.*.sw*'"
+alias tmux='tmux -2'
+alias ls='ls -G'
+alias ll='ls -la'
+alias grep='grep --color'
+alias diff='diff -u'
+alias diff-nospace='diff -BbwE'
+# # for ubuntu
+# alias pbcopy='xsel --clipboard --input'
+# alias pbpaste='xsel --clipboard --output'
 
 # for rvm
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
