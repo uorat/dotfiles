@@ -372,8 +372,9 @@ set ttymouse=xterm2
 
 " OSのクリップボードを使用する
 " ヤンクした文字は、システムのクリップボードに入れる
-"set clipboard+=unnamed
-set clipboard=unnamedplus,autoselect
+set clipboard+=unnamed
+set clipboard+=autoselect
+" set clipboard=unnamedplus,autoselect
 
 " 挿入モードで Ctrl+k を押すとクリップボードの内容を貼り付けられるようにする
 " neocomplcacheと被るのでコメントアウト
@@ -454,7 +455,7 @@ augroup END
 set autoindent          " 自動でインデント
 set smartindent         " 新しい行のインデントを現在行と同じ量にする
 " set paste             " ペースト時にautoindentを無効にする
-set tabstop=4           " Tabの表示幅
+set tabstop=2           " Tabの表示幅
 set shiftwidth=2        " インデント幅設定
 set expandtab           " TABをSpaceに
 
