@@ -9,8 +9,8 @@ set t_Co=256
 "     http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310
 " usage:
 "   # Linux or Mac OS X
-"   $ mkdir -p ~/.vim/bundle
-"   $ git clone http://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+"   $ ln -s ~/dotfiles/vim ~/.vim
+"   $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "
 "   # Windows
 "   $ mklink .vimrc \app\dotfiles\vimrc
