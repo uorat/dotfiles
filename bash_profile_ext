@@ -1,11 +1,3 @@
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
-
-if [ -f ~/.bash_profile_ext ]; then
-    . ~/.bash_profile_ext
-fi
-
 export LANG=ja_JP.UTF-8
 export TERM='xterm-256color'
 export COLORTERM='gnome-terminal'
