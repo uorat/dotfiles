@@ -6,13 +6,13 @@ export EDITOR=vim
 alias swpsearch='find . -name ".*.sw*"'
 alias findswp="find . -name '.*.sw*'"
 alias tmux='tmux -2'
-alias ls='ls -aG'
+alias ls='ls -aG --color'
 alias l='ls -aG'
 alias ll='ls -alG'
 alias grep='grep --color'
 alias diff='diff -u'
 alias diff-nospace='diff -BbwE'
-alias shell_restart='eval "$(rbenv init -)"'
+alias shell_restart='exec $SHELL -l'
 
 # aws
 echo 'complete -C aws_completer aws'
