@@ -14,8 +14,12 @@ alias diff='diff -u'
 alias diff-nospace='diff -BbwE'
 alias shell_restart='exec $SHELL -l'
 
+# completion for mac
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 # aws
-echo 'complete -C aws_completer aws'
+complete -C aws_completer aws
 
 # # for ubuntu
 # alias pbcopy='xsel --clipboard --input'
