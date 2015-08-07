@@ -31,25 +31,59 @@ endif
 
 " Required new ver.
 call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundleFetch 'Shougo/neobundle.vim'
+
+  NeoBundle 'Shougo/vimproc', {
+    \ 'build' : {
+      \ 'windows' : 'make -f make_mingw32.mak',
+      \ 'cygwin' : 'make -f make_cygwin.mak',
+      \ 'mac' : 'make -f make_mac.mak',
+      \ 'unix' : 'make -f make_unix.mak',
+    \ },
+  \ }
+
+  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
+  NeoBundle 'Shougo/vimshell'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/neomru.vim' "Unite::file_mruで使用
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'bling/vim-airline'
+  NeoBundle 'vim-scripts/AnsiEsc.vim'
+  NeoBundle 'soramugi/auto-ctags.vim'
+  NeoBundle 'vim-scripts/taglist.vim'
+  NeoBundle 'kannokanno/previm'
+  NeoBundle 'tyru/open-browser.vim'
+  NeoBundle 'zeekay/vice-colorful'
+  NeoBundle 'AndrewRadev/switch.vim'
+  NeoBundle 'AndrewRadev/splitjoin.vim'
+  NeoBundle 'tomtom/tcomment_vim'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'tpope/vim-endwise'
+  NeoBundle 'Align'
+  NeoBundle 'h1mesuke/vim-alignta'
+  NeoBundle 'SQLUtilities'
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'basyura/unite-rails'
+  NeoBundle 'thinca/vim-ft-svn_diff'      "svn commit時に差分を表示するプラグイン
+
+  " Shougo Bundles here:
+  "NeoBundle 'tpope/vim-fugitive'
+  "NeoBundle 'kien/ctrlp.vim'
+  "NeoBundle 'flazz/vim-colorschemes'
 call neobundle#end()
 
 NeoBundleFetch 'Shougo/neobundle.vim'   " Required: Let NeoBundle manage NeoBundle
 
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-\ }
+NeoBundleCheck
 
 
 "-------------------------------------------------------------------------------
 " Plugin: NeoComplcache - 入力補完
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/neocomplcache'
 
 "Note => This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
@@ -145,8 +179,6 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "-------------------------------------------------------------------------------
 " Plugin: NeoSnippet - スニペット補完
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -176,7 +208,6 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 "-------------------------------------------------------------------------------
 " Plugin: VimShell - Vim上でShellを実行する ( :VimShell )
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/vimshell'
 
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
@@ -186,8 +217,6 @@ nnoremap <silent> vp :VimShellPop<CR>
 "-------------------------------------------------------------------------------
 " Plugin: Unite - 高機能ファイラー
 "-------------------------------------------------------------------------------
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim' "Unite::file_mruで使用
 
 let mapleader = ","
 
@@ -252,15 +281,6 @@ autocmd FileType unite call s:unite_my_settings()
 " http://www.daisaru11.jp/blog/2011/09/vimsyntastic%E3%81%A7%E6%96%87%E6%B3%95%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E8%87%AA%E5%8B%95%E3%81%A7%E8%A1%8C%E3%81%86/
 " http://soramugi.hateblo.jp/entry/2013/12/01/150433
 "-------------------------------------------------------------------------------
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'soramugi/auto-ctags.vim'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'zeekay/vice-colorful'
 
 colorscheme molokai-dark
 
@@ -305,17 +325,6 @@ nnoremap <silent> tl :TlistToggle<CR>   "tlでtaglistウインドウを開閉
 " Plugin: vim-rails     - RailsのModel-View-Controllerの移動補佐 (:Rmodel ...etc)
 " Plugin: unite-rails   - Rails
 "-------------------------------------------------------------------------------
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'Align'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'SQLUtilities'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'basyura/unite-rails'
 
 nnoremap <silent> -   :Switch<CR>
 
@@ -335,18 +344,11 @@ nmap gk :SplitjoinSplit<cr>
 "-------------------------------------------------------------------------------
 " Plugin: Others
 "-------------------------------------------------------------------------------
-NeoBundle 'thinca/vim-ft-svn_diff'      "svn commit時に差分を表示するプラグイン
-
-" Shougo Bundles here:
-"NeoBundle 'tpope/vim-fugitive'
-"NeoBundle 'kien/ctrlp.vim'
-"NeoBundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on     "Required: ファイルタイプ判定をon
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
 
 
 "-----------------------------------------------------------
