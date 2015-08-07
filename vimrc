@@ -202,8 +202,8 @@ nnoremap <silent> [unite]f  :<C-u>Unite file_rec -no-split<CR>
 nnoremap <silent> [unite]rm  :<C-u>Unite ref/man<CR>
 nnoremap <silent> [unite]re  :<C-u>Unite ref/erlang<CR>
 nnoremap <silent> [unite]rr  :<C-u>Unite ref/refe<CR>
-nnoremap <silent> [unite]b  :<C-u>Unite buffer_tab<CR>
-nnoremap <silent> [unite]B  :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]B  :<C-u>Unite buffer_tab<CR>
+nnoremap <silent> [unite]b  :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]m  :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]j  :<C-u>Unite mark<CR>
 nnoremap <silent> [unite]o  :<C-u>Unite outline:!<CR>
@@ -502,6 +502,7 @@ if !exists('loaded_matchit')
   runtime macros/matchit.vim
 endif
 
+set backspace=indent,eol,start " mac で terminal からvim利用時にbackspaceキーが効かなくなる現象の対応
 
 "-------------------------------------------------------------------------------
 " Configration: エンコーディング関連 Encoding
