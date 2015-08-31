@@ -18,6 +18,21 @@ set t_Co=256
 "   $ mklink /d .vim \app\dotfiles\vim
 "   $ git clone http://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "
+" Usage - auto-ctags
+"   1. install ctags
+"        mac    `brew install ctags`
+"        debian `apt-get install exuberant-ctags`
+"   2. run ctags
+"        :Ctags
+"
+" http://www.daisaru11.jp/blog/2011/09/vimsyntastic%E3%81%A7%E6%96%87%E6%B3%95%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E8%87%AA%E5%8B%95%E3%81%A7%E8%A1%8C%E3%81%86/
+" http://soramugi.hateblo.jp/entry/2013/12/01/150433
+"
+" Usage - ag (faster grep)
+"   1. install ag
+"        mac    `brew install the_silver_searcher`
+" http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
+"
 "-------------------------------------------------------------------------------
 if has('vim_starting')
   set nocompatible  " Be iMproved
@@ -221,23 +236,27 @@ nnoremap <silent> vp :VimShellPop<CR>
 let mapleader = ","
 
 nnoremap [unite] <Nop>
-nmap <Leader>f [unite]
+nmap <Leader> [unite]
+" nmap <Leader>f [unite]
 
 nnoremap [unite]u :<C-u>Unite -no-split<Space>
 nnoremap <silent> ;  :<C-u>Unite history/command command<CR>
 nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]l  :<C-u>Unite file<CR>
 nnoremap <silent> [unite]f  :<C-u>Unite file_rec -no-split<CR>
-nnoremap <silent> [unite]rm  :<C-u>Unite ref/man<CR>
-nnoremap <silent> [unite]re  :<C-u>Unite ref/erlang<CR>
-nnoremap <silent> [unite]rr  :<C-u>Unite ref/refe<CR>
+nnoremap <silent> [unite]r  :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> [unite]y  :<C-u>Unite history/yank<CR>
+" nnoremap <silent> [unite]rm  :<C-u>Unite ref/man<CR>
+" nnoremap <silent> [unite]re  :<C-u>Unite ref/mrlang<CR>
+" nnoremap <silent> [unite]rr  :<C-u>Unite ref/refe<CR>
 nnoremap <silent> [unite]B  :<C-u>Unite buffer_tab<CR>
 nnoremap <silent> [unite]b  :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]m  :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]j  :<C-u>Unite mark<CR>
 nnoremap <silent> [unite]o  :<C-u>Unite outline:!<CR>
 nnoremap <silent> [unite]p  :<C-u>Unite outline -auto-preview<CR>
-nnoremap <silent> [unite]g  :<C-u>Unite grep<CR>
+nnoremap <silent> [unite]g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]R  :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]t  :<C-u>UniteWithCursorWord -buffer-name=tag tag<CR>
 nnoremap <silent> [unite]h  :<C-u>Unite help<CR>
 nnoremap <silent> [unite]t  :<C-u>Unite tag<CR>
@@ -249,6 +268,13 @@ let g:unite_source_file_mru_limit = 200	" MRU (Most Recently Used)の表示件�
 " 大文字小文字を区別しない
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 function! s:unite_my_settings()
   " Overwrite settings.
@@ -270,16 +296,6 @@ autocmd FileType unite call s:unite_my_settings()
 " Plugin: previm        - previewer Markdown, textfile
 " Plugin: open-browser  - Open browser
 " Plugin: colorschema
-"
-" Usage - auto-ctags
-"   1. install ctags
-"        mac    `brew install ctags`
-"        debian `apt-get install exuberant-ctags`
-"   2. run ctags
-"        :Ctags
-"
-" http://www.daisaru11.jp/blog/2011/09/vimsyntastic%E3%81%A7%E6%96%87%E6%B3%95%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%92%E8%87%AA%E5%8B%95%E3%81%A7%E8%A1%8C%E3%81%86/
-" http://soramugi.hateblo.jp/entry/2013/12/01/150433
 "-------------------------------------------------------------------------------
 
 colorscheme molokai-dark
