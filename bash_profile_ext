@@ -19,10 +19,10 @@ elif [ `uname` = "Linux" ]; then
     alias ll='ls -al --color'
 fi
 
-if [ `which ag` ]; then
+if type "ag" > /dev/null 2>&1; then
     alias grep="ag"
-elif [ `which ack` ]; then
-    alias grep="ag"
+elif type "ack" > /dev/null 2>&1; then
+    alias grep="ack"
 else
   alias grep='grep --color'
 fi
@@ -33,12 +33,12 @@ alias swpsearch='find . -name ".*.sw*"'
 alias findswp="find . -name '.*.sw*'"
 
 # completion for mac
-if [ `which brew` -a -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if type "brew" > /dev/null 2>&1; then
+    [[ -f $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 fi
 
 # aws
-if [ `which aws` ]; then
+if type "aws" > /dev/null 2>&1; then
     complete -C aws_completer aws
 fi
 
