@@ -417,6 +417,7 @@ set number          " 行番号表示
 set display=uhex    " 印字不可能文字を16進数で表示
 set lazyredraw      " コマンド実行中は再描画しない
 set ttyfast         " 高速ターミナル接続を行う
+set nomodeline      " E518対応 http://qiita.com/aoki/items/383d3f5c0b8fb2067b70
 
 syntax enable       " シンタックスカラーをON
 
