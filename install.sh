@@ -20,4 +20,4 @@ done
 
 echo -e "if [ -f ~/.bash_profile_ext ]; then\n    . ~/.bash_profile_ext\nfi" >> $HOME/.bashrc
 
-git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim && cat $HOME/dotfiles/README.md|vim -
+git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim && cat $HOME/dotfiles/README.mkd|vim -
