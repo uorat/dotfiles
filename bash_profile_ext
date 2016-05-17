@@ -7,6 +7,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias tmux='tmux -2'
+alias tmux-node='tmux source-file ~/dotfiles/tmux-node.pane'
+alias tmux-web='tmux source-file ~/dotfiles/tmux-web.pane'
 alias diff='diff -u'
 
 if [ `uname` = "Darwin" ]; then

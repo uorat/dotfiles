@@ -1,0 +1,58 @@
+### 1st Window
+## Create New Window
+new-window -n node
+
+## Horizontal split
+splitw -d
+#resize-pane -D 12
+splitw -d
+
+## Vertical split
+splitw -h -d
+splitw -h -d
+select-pane -D
+splitw -h -d
+splitw -h -d
+select-pane -D
+splitw -h -d
+splitw -h -d
+select-pane -D
+select-pane -L
+splitw -h -d
+select-pane -D
+splitw -h -d
+select-pane -D
+splitw -h
+select-pane -D
+select-pane -R
+
+select-layout tiled
+
+## send-keys
+send-keys -t node.0 'ssh ${PANES12_HOST1}' C-m
+send-keys -t node.1 'ssh ${PANES12_HOST2}' C-m
+send-keys -t node.2 'ssh ${PANES12_HOST3}' C-m
+send-keys -t node.3 'ssh ${PANES12_HOST4}' C-m
+send-keys -t node.4 'ssh ${PANES12_HOST5}' C-m
+send-keys -t node.5 'ssh ${PANES12_HOST6}' C-m
+send-keys -t node.6 'ssh ${PANES12_HOST7}' C-m
+send-keys -t node.7 'ssh ${PANES12_HOST8}' C-m
+send-keys -t node.8 'ssh ${PANES12_HOST9}' C-m
+send-keys -t node.9 'ssh ${PANES12_HOST10}' C-m
+send-keys -t node.10 'ssh ${PANES12_HOST11}' C-m
+send-keys -t node.11 'ssh ${PANES12_HOST12}' C-m
+
+send-keys -t node.0 'dstat -clmn' C-m
+send-keys -t node.1 'dstat -clmn' C-m
+send-keys -t node.2 'dstat -clmn' C-m
+send-keys -t node.3 'dstat -clmn' C-m
+send-keys -t node.4 'dstat -clmn' C-m
+send-keys -t node.5 'dstat -clmn' C-m
+send-keys -t node.6 'dstat -clmn' C-m
+send-keys -t node.7 'dstat -clmn' C-m
+send-keys -t node.8 'dstat -clmn' C-m
+send-keys -t node.9 'dstat -clmn' C-m
+send-keys -t node.10 'dstat -clmn' C-m
+send-keys -t node.11 'dstat -clmn' C-m
+setw synchronize-panes on
+select-pane -t node.0

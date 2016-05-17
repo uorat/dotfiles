@@ -1,0 +1,37 @@
+### 1st Window
+## Create New Window
+new-window -n web
+
+## Horizontal split
+splitw -d
+#resize-pane -D 12
+splitw -d
+
+## Vertical split
+splitw -h -d
+select-pane -D
+splitw -h -d
+select-pane -D
+splitw -h -d
+select-pane -D
+select-pane -R
+
+select-layout tiled
+
+## send-keys
+send-keys -t web.0 'ssh ${PANES6_HOST1}' C-m
+send-keys -t web.1 'ssh ${PANES6_HOST2}' C-m
+send-keys -t web.2 'ssh ${PANES6_HOST3}' C-m
+send-keys -t web.3 'ssh ${PANES6_HOST4}' C-m
+send-keys -t web.4 'ssh ${PANES6_HOST5}' C-m
+send-keys -t web.5 'ssh ${PANES6_HOST6}' C-m
+
+send-keys -t web.0 'dstat -Tclmdrn' C-m
+send-keys -t web.1 'dstat -Tclmdrn' C-m
+send-keys -t web.2 'dstat -Tclmdrn' C-m
+send-keys -t web.3 'dstat -Tclmdrn' C-m
+send-keys -t web.4 'dstat -Tclmdrn' C-m
+send-keys -t web.5 'dstat -Tclmdrn' C-m
+## send-keys
+setw synchronize-panes on
+select-pane -t web.0
