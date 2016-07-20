@@ -9,29 +9,42 @@ splitw -d
 
 ## Vertical split
 splitw -h -d
-select-pane -D
 splitw -h -d
 select-pane -D
 splitw -h -d
+splitw -h -d
 select-pane -D
-select-pane -R
-
+splitw -h -d
+splitw -h -d
+select-pane -D
+select-pane -L
+splitw -h -d
+select-pane -D
 select-layout tiled
 
 ## send-keys
-send-keys -t web.0 'ssh ${PANES6_HOST1}' C-m
-send-keys -t web.1 'ssh ${PANES6_HOST2}' C-m
-send-keys -t web.2 'ssh ${PANES6_HOST3}' C-m
-send-keys -t web.3 'ssh ${PANES6_HOST4}' C-m
-send-keys -t web.4 'ssh ${PANES6_HOST5}' C-m
-send-keys -t web.5 'ssh ${PANES6_HOST6}' C-m
+send-keys -t web.0 'ssh ${PANE_WEB01}' C-m
+send-keys -t web.1 'ssh ${PANE_WEB02}' C-m
+send-keys -t web.2 'ssh ${PANE_WEB03}' C-m
+send-keys -t web.3 'ssh ${PANE_WEB04}' C-m
+send-keys -t web.4 'ssh ${PANE_WEB05}' C-m
+send-keys -t web.5 'ssh ${PANE_WEB06}' C-m
+send-keys -t web.6 'ssh ${PANE_WEB07}' C-m
+send-keys -t web.7 'ssh ${PANE_WEB08}' C-m
+send-keys -t web.8 'ssh ${PANE_WEB09}' C-m
+send-keys -t web.9 'ssh ${PANE_WEB10}' C-m
 
-send-keys -t web.0 'dstat -Tclmdrn' C-m
-send-keys -t web.1 'dstat -Tclmdrn' C-m
-send-keys -t web.2 'dstat -Tclmdrn' C-m
-send-keys -t web.3 'dstat -Tclmdrn' C-m
-send-keys -t web.4 'dstat -Tclmdrn' C-m
-send-keys -t web.5 'dstat -Tclmdrn' C-m
+send-keys -t web.0 'dstat -clmdn' C-m
+send-keys -t web.1 'dstat -clmdn' C-m
+send-keys -t web.2 'dstat -clmdn' C-m
+send-keys -t web.3 'dstat -clmdn' C-m
+send-keys -t web.4 'dstat -clmdn' C-m
+send-keys -t web.5 'dstat -clmdn' C-m
+send-keys -t web.6 'dstat -clmdn' C-m
+send-keys -t web.7 'dstat -clmdn' C-m
+send-keys -t web.8 'dstat -clmdn' C-m
+send-keys -t web.9 'dstat -clmdn' C-m
+
 ## send-keys
 setw synchronize-panes on
 select-pane -t web.0

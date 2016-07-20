@@ -9,6 +9,7 @@ alias mv='mv -i'
 alias tmux='tmux -2'
 alias tmux-node='tmux source-file ~/dotfiles/tmux-node.pane'
 alias tmux-web='tmux source-file ~/dotfiles/tmux-web.pane'
+alias tmux-live='tmux source-file ~/dotfiles/tmux-live.pane'
 alias diff='diff -u'
 
 if [ `uname` = "Darwin" ]; then

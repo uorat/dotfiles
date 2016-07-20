@@ -1,0 +1,48 @@
+### 1st Window
+## Create New Window
+new-window -n live
+
+## Horizontal split
+splitw -d
+#resize-pane -D 12
+splitw -d
+
+## Vertical split
+splitw -h -d
+splitw -h -d
+select-pane -D
+splitw -h -d
+splitw -h -d
+select-pane -D
+splitw -h -d
+splitw -h -d
+select-pane -D
+select-pane -L
+splitw -h -d
+select-pane -D
+select-layout tiled
+
+## send-keys
+send-keys -t live.0 'ssh ${PANE_LIVE01}' C-m
+send-keys -t live.1 'ssh ${PANE_LIVE02}' C-m
+send-keys -t live.2 'ssh ${PANE_LIVE03}' C-m
+send-keys -t live.3 'ssh ${PANE_LIVE04}' C-m
+send-keys -t live.4 'ssh ${PANE_LIVE05}' C-m
+send-keys -t live.5 'ssh ${PANE_LIVE06}' C-m
+send-keys -t live.6 'ssh ${PANE_LIVE07}' C-m
+send-keys -t live.7 'ssh ${PANE_LIVE08}' C-m
+send-keys -t live.8 'ssh ${PANE_LIVE09}' C-m
+send-keys -t live.9 'ssh ${PANE_LIVE10}' C-m
+
+send-keys -t live.0 'dstat -clmn' C-m
+send-keys -t live.1 'dstat -clmn' C-m
+send-keys -t live.2 'dstat -clmn' C-m
+send-keys -t live.3 'dstat -clmn' C-m
+send-keys -t live.4 'dstat -clmn' C-m
+send-keys -t live.5 'dstat -clmn' C-m
+send-keys -t live.6 'dstat -clmn' C-m
+send-keys -t live.7 'dstat -clmn' C-m
+send-keys -t live.8 'dstat -clmn' C-m
+send-keys -t live.9 'dstat -clmn' C-m
+setw synchronize-panes on
+select-pane -t live.0

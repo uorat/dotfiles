@@ -29,18 +29,18 @@ select-pane -R
 select-layout tiled
 
 ## send-keys
-send-keys -t node.0 'ssh ${PANES12_HOST1}' C-m
-send-keys -t node.1 'ssh ${PANES12_HOST2}' C-m
-send-keys -t node.2 'ssh ${PANES12_HOST3}' C-m
-send-keys -t node.3 'ssh ${PANES12_HOST4}' C-m
-send-keys -t node.4 'ssh ${PANES12_HOST5}' C-m
-send-keys -t node.5 'ssh ${PANES12_HOST6}' C-m
-send-keys -t node.6 'ssh ${PANES12_HOST7}' C-m
-send-keys -t node.7 'ssh ${PANES12_HOST8}' C-m
-send-keys -t node.8 'ssh ${PANES12_HOST9}' C-m
-send-keys -t node.9 'ssh ${PANES12_HOST10}' C-m
-send-keys -t node.10 'ssh ${PANES12_HOST11}' C-m
-send-keys -t node.11 'ssh ${PANES12_HOST12}' C-m
+send-keys -t node.0 'ssh ${PANE_NODE01}' C-m
+send-keys -t node.1 'ssh ${PANE_NODE02}' C-m
+send-keys -t node.2 'ssh ${PANE_NODE03}' C-m
+send-keys -t node.3 'ssh ${PANE_NODE04}' C-m
+send-keys -t node.4 'ssh ${PANE_NODE05}' C-m
+send-keys -t node.5 'ssh ${PANE_NODE06}' C-m
+send-keys -t node.6 'ssh ${PANE_NODE07}' C-m
+send-keys -t node.7 'ssh ${PANE_NODE08}' C-m
+send-keys -t node.8 'ssh ${PANE_NODE09}' C-m
+send-keys -t node.9 'ssh ${PANE_NODE10}' C-m
+send-keys -t node.10 'ssh ${PANE_NODE11}' C-m
+send-keys -t node.11 'ssh ${PANE_NODE12}' C-m
 
 send-keys -t node.0 'dstat -clmn' C-m
 send-keys -t node.1 'dstat -clmn' C-m
