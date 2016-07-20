@@ -3,6 +3,7 @@
 set -eu
 
 cd ~ && git clone https://github.com/uorat/dotfiles.git
+mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 DOT_FILES=( bash_profile_ext \
             gemrc \
