@@ -84,6 +84,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'tpope/vim-rails'
   NeoBundle 'basyura/unite-rails'
   NeoBundle 'thinca/vim-ft-svn_diff'      "svn commit時に差分を表示するプラグイン
+  NeoBundle 'keith/tmux.vim'
 
   " Shougo Bundles here:
   "NeoBundle 'tpope/vim-fugitive'
