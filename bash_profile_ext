@@ -68,3 +68,7 @@ if [ -s $HOME/.pyenv ]; then
     eval "$(pyenv init -)"
     alias dstat="PYENV_VERSION=system dstat"
 fi
+
+# git completion
+#   curl -o "dotfiles/#1" https://raw.githubusercontent.com/git/git/master/contrib/completion/{git-completion.bash}
+source "$HOME/dotfiles/git-completion.bash"
