@@ -22,5 +22,5 @@ done
 
 echo -e "if [ -f ~/.bash_profile_ext ]; then\n    . ~/.bash_profile_ext\nfi" >> $HOME/.bashrc
 
-curl -o "dotfiles/#1" https://raw.githubusercontent.com/git/git/master/contrib/completion/{git-completion.bash}
+curl -o "$HOME/dotfiles/#1" https://raw.githubusercontent.com/git/git/master/contrib/completion/{git-completion.bash}
 git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim && cat $HOME/dotfiles/README.mkd|vim -

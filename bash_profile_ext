@@ -70,5 +70,5 @@ if [ -s $HOME/.pyenv ]; then
 fi
 
 # git completion
-#   curl -o "dotfiles/#1" https://raw.githubusercontent.com/git/git/master/contrib/completion/{git-completion.bash}
+#   curl -o "$HOME/dotfiles/#1" https://raw.githubusercontent.com/git/git/master/contrib/completion/{git-completion.bash}
 source "$HOME/dotfiles/git-completion.bash"
