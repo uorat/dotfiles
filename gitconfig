@@ -25,4 +25,4 @@
 	lsr     = ls-remote upstream
 
 [color]
-	ui      = true
+	ui      = auto

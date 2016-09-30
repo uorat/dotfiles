@@ -64,6 +64,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/neomru.vim' "Unite::file_mruで使用
   NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'gregsexton/gitv'
   NeoBundle 'scrooloose/syntastic'
   NeoBundle 'bling/vim-airline'
   NeoBundle 'vim-scripts/AnsiEsc.vim'
@@ -88,7 +90,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'yoppi/fluentd.vim'
 
   " Shougo Bundles here:
-  "NeoBundle 'tpope/vim-fugitive'
   "NeoBundle 'kien/ctrlp.vim'
   "NeoBundle 'flazz/vim-colorschemes'
 call neobundle#end()
