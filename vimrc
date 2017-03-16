@@ -70,7 +70,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'bling/vim-airline'
   NeoBundle 'vim-scripts/AnsiEsc.vim'
   NeoBundle 'soramugi/auto-ctags.vim'
-  NeoBundle 'vim-scripts/taglist.vim'
+  NeoBundle 'majutsushi/tagbar'
   NeoBundle 'kannokanno/previm'
   NeoBundle 'tyru/open-browser.vim'
   NeoBundle 'zeekay/vice-colorful'
@@ -88,6 +88,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'thinca/vim-ft-svn_diff'      "svn commit時に差分を表示するプラグイン
   NeoBundle 'keith/tmux.vim'
   NeoBundle 'yoppi/fluentd.vim'
+  NeoBundle 'fatih/vim-go'
 
   " Shougo Bundles here:
   "NeoBundle 'kien/ctrlp.vim'
@@ -231,7 +232,6 @@ nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
 nnoremap <silent> vp :VimShellPop<CR>
 
-
 "-------------------------------------------------------------------------------
 " Plugin: Unite - 高機能ファイラー
 "-------------------------------------------------------------------------------
@@ -239,8 +239,7 @@ nnoremap <silent> vp :VimShellPop<CR>
 let mapleader = ","
 
 nnoremap [unite] <Nop>
-nmap <Leader> [unite]
-" nmap <Leader>f [unite]
+nmap <Leader>f [unite]
 
 nnoremap [unite]u :<C-u>Unite -no-split<Space>
 nnoremap <silent> ;  :<C-u>Unite history/command command<CR>
@@ -295,7 +294,7 @@ autocmd FileType unite call s:unite_my_settings()
 " Plugin: AirLine       - Extend statusline
 " Plugin: AnsiEsc       - ASCI文字を反映
 " Plugin: auto-ctags    - ctagsを保存時に実行する
-" Plugin: taglist.vim   - class, method tree list
+" Plugin: tagbar        - class, method tree list
 " Plugin: previm        - previewer Markdown, textfile
 " Plugin: open-browser  - Open browser
 " Plugin: colorschema
@@ -323,10 +322,7 @@ set laststatus=2        " 常にステータスラインを表示
 " set tags+=.svn/tags
 nnoremap <C-]> g<C-]>   " 候補が複数ある場合は候補を表示する
 
-let Tlist_Show_One_File = 1             "現在表示中のファイルのみのタグしか表示しない
-let Tlist_Use_Right_Window = 1          "右側にtag listのウインドうを表示する
-let Tlist_Exit_OnlyWindow = 1           "taglistのウインドウだけならVimを閉じる
-nnoremap <silent> tl :TlistToggle<CR>   "tlでtaglistウインドウを開閉
+nnoremap <silent> tl :Tagbar<CR>   "tlでtagbarウインドウを開閉
 
 
 "-------------------------------------------------------------------------------
