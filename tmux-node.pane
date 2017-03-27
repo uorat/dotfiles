@@ -20,12 +20,6 @@ select-pane -D
 select-pane -L
 splitw -h -d
 select-pane -D
-splitw -h -d
-select-pane -D
-splitw -h
-select-pane -D
-select-pane -R
-
 select-layout tiled
 
 ## send-keys
@@ -39,8 +33,6 @@ send-keys -t node.6 'ssh ${PANE_NODE07}' C-m
 send-keys -t node.7 'ssh ${PANE_NODE08}' C-m
 send-keys -t node.8 'ssh ${PANE_NODE09}' C-m
 send-keys -t node.9 'ssh ${PANE_NODE10}' C-m
-send-keys -t node.10 'ssh ${PANE_NODE11}' C-m
-send-keys -t node.11 'ssh ${PANE_NODE12}' C-m
 
 send-keys -t node.0 'dstat -clmn' C-m
 send-keys -t node.1 'dstat -clmn' C-m
@@ -52,7 +44,5 @@ send-keys -t node.6 'dstat -clmn' C-m
 send-keys -t node.7 'dstat -clmn' C-m
 send-keys -t node.8 'dstat -clmn' C-m
 send-keys -t node.9 'dstat -clmn' C-m
-send-keys -t node.10 'dstat -clmn' C-m
-send-keys -t node.11 'dstat -clmn' C-m
 setw synchronize-panes on
 select-pane -t node.0
