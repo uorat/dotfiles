@@ -9,8 +9,25 @@ The repository of my configuration files.
 Installation
 ------------------------------------------------------------
 
+### Base
+
 ```
 curl -L https://raw.githubusercontent.com/uorat/dotfiles/master/install.sh|bash
+```
+
+It opens Vim and suggest to install vim-plugins automatically after executing this command.
+
+### Tmux
+
+Run Tmux and Type [Prefix (Ctrl - Y)] + I, then install tmux-plugins by tpm automatically.
+
+### git-completion.bash
+
+It will get latest git-completion.bash from [github](https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash) automatically.
+If you use older git, you run bellow command.
+
+```
+cp /usr/share/doc/git-x.x.x.x/contrib/completion/git-completion.bash ~/dotfiles/git-completion.bash
 ```
 
 Requirement
