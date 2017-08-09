@@ -62,6 +62,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundle 'Shougo/vimshell'
   NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/unite-outline'
   NeoBundle 'Shougo/neomru.vim' "Unite::file_mruで使用
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'tpope/vim-fugitive'
@@ -256,7 +257,7 @@ nnoremap <silent> [unite]B  :<C-u>Unite buffer_tab<CR>
 nnoremap <silent> [unite]b  :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]m  :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]j  :<C-u>Unite mark<CR>
-nnoremap <silent> [unite]o  :<C-u>Unite outline:!<CR>
+nnoremap <silent> [unite]o  :<C-u>Unite -vertical -no-quit -winwidth=40 -buffer-name=outline outline<CR>
 nnoremap <silent> [unite]p  :<C-u>Unite outline -auto-preview<CR>
 nnoremap <silent> [unite]g  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 nnoremap <silent> [unite]R  :<C-u>UniteResume search-buffer<CR>
