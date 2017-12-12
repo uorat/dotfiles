@@ -26,3 +26,5 @@
 
 [color]
 	ui      = auto
+[merge]
+	tool = vimdiff
