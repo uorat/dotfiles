@@ -13,7 +13,7 @@ if has('win32')     "win32 & win64
   set guifont=Migu_1M:h12
 else
   " set guifont=Monospace\ 14
-  set guifont=Menlo\ Regular:h18
+  set guifont=Menlo\ Regular:h14
 endif
 
 "-------------------------------------------------------------------------------
