@@ -1,0 +1,30 @@
+{
+	"title": "Screensaver",
+	"rules": [
+		{
+			"description": "Ctrl + Command + L で スクリーンセーバーを起動する",
+			"manipulators": [
+				{
+					"from": {
+						"key_code": "l",
+						"modifiers": {
+							"mandatory": [
+								"left_control",
+								"left_command"
+							],
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"shell_command": "open /System/Library/CoreServices/ScreenSaverEngine.app"
+						}
+					],
+					"type": "basic"
+				}
+			]
+		}
+	]
+}
