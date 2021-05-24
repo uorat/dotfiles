@@ -598,7 +598,7 @@ endif
 set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
-"inoremap <silent> <unique> <ESC> <ESC>:set imsearch=0 iminsert=0<CR>
+inoremap <silent> <unique> <ESC> <ESC>:set imsearch=0 iminsert=0<CR>
 
 "-------------------------------------------------------------------------------
 " Configration: ステータスライン StatusLine => bling/vim-airline で代替
